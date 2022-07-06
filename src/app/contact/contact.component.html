@@ -1,0 +1,52 @@
+<div class="ball git" *ngFor="let ball of this.gitBalls; index as i" id="ball-git-{{i}}"
+     [@moveBall]="{value: ball.animationConfig.value, params: ball.animationConfig.params}"
+     (@moveBall.done)="onBallsMovement($event, 'git', i)"
+     style="color: {{ball.color}} !important; left: {{ball.animationConfig.params.toX}}vw;
+     top: {{ball.animationConfig.params.toY}}vh; font-size: {{ball.size}}em;"
+>
+  <a href="https://github.com/Brotholomew" target="_blank"><i class="fab fa-github"></i></a>
+</div>
+
+<div class="ball mail" *ngFor="let ball of this.mailBalls; index as i" id="ball-mail-{{i}}"
+     [@moveBall]="{value: ball.animationConfig.value, params: ball.animationConfig.params}"
+     (@moveBall.done)="onBallsMovement($event, 'mail' ,i)"
+     style="color: {{ball.color}} !important; left: {{ball.animationConfig.params.toX}}vw;
+     top: {{ball.animationConfig.params.toY}}vh; font-size: {{ball.size}}em;"
+>
+  <a href="mailto:bartosz.w.blachut@gmail.com" target="_blank"><i class="far fa-envelope-open"></i></a>
+</div>
+
+<div class="ball linkedin" *ngFor="let ball of this.linkedinBalls; index as i" id="ball-linkedin-{{i}}"
+     [@moveBall]="{value: ball.animationConfig.value, params: ball.animationConfig.params}"
+     (@moveBall.done)="onBallsMovement($event,'linkedin', i)"
+     style="color: {{ball.color}} !important; left: {{ball.animationConfig.params.toX}}vw;
+     top: {{ball.animationConfig.params.toY}}vh; font-size: {{ball.size}}em;"
+>
+  <a href="#" target="_blank" ><i class="fab fa-linkedin"></i></a>
+</div>
+
+<div class="main-container">
+  <div class="wrapper" id="place">
+    <div class="title">
+      <h3>WHERE</h3>
+      <div class="line"></div>
+      <h1>Katowice & Warsaw</h1>
+    </div>
+  </div>
+
+  <div class="wrapper" id="phone">
+    <div class="title">
+      <h3>PHONE</h3>
+      <div class="line"></div>
+      <h1>+48 886 012 031</h1>
+    </div>
+  </div>
+
+  <div class="wrapper" id="mail">
+    <div class="title">
+      <h3>MAIL</h3>
+      <div class="line"></div>
+      <h1><a href="mailto:bartosz.w.blachut@gmail.com" target="_blank">bartosz.w.blachut@gmail.com</a></h1>
+    </div>
+  </div>
+</div>

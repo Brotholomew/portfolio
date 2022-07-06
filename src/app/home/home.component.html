@@ -1,0 +1,56 @@
+<!-- floating balls -->
+<div *ngFor="let ball of this.balls; index as i" class="ball" id="ball-{{i}}"
+     [@moveBall]="{value: this.balls[i].animationConfig.value, params: this.balls[i].animationConfig.params}"
+     (@moveBall.done)="onBallsMovement($event, i)" (click)="onBallClicked(i)"
+     style="background: {{this.balls[i].color}}; left: {{this.balls[i].animationConfig.params.toX}}vw;
+     top: {{this.balls[i].animationConfig.params.toY}}vh; width: {{this.balls[i].size}}vw; height: {{this.balls[i].size}}vw" >
+</div>
+
+<!-- main container -->
+<div (window:resize)="reshapePicture()" class="main-container">
+  <!-- <div class="main-content"> -->
+
+    <div class="main-content-whoami" id="main-content-whoami">
+
+      <!-- main text -->
+      <div class="main-content-text" id="main-content-text" data-aos="fade-up" data-aos-duration="600">
+        <p>Hi, I am a Computer Science and Information Systems student at Warsaw
+          University of Technology </p>
+      </div>
+
+      <!-- typed-js -->
+      <div class="main-content-typed-js" data-aos="fade" data-aos-duration="450">
+        <ngx-typed-js [strings]="[
+          'I love <strong>maths</strong>!',
+          'I love <strong>coding</strong>!',
+          'I love <strong>Docker</strong>!',
+          'I have experience in <strong>C / C++ / C#</strong>!',
+          'I know <strong>Jenkins</strong> pipelines!',
+          'I have scripting experience in <strong>Bash</strong> and <strong>Python</strong>!',
+          'I have passed <strong>Azure AZ900 Fundamentals</strong>!',
+          'I know some <strong>PHP and SQL</strong>!',
+          'I keenly experiment with <strong>Angular</strong>, <strong>React</strong> and <strong>WordPress</strong>!',
+          'I have developed projects in <strong>MATLAB</strong> and <strong>R</strong>',
+          'I am good <strong>with people</strong>!',
+          'I will work <strong>for you</strong>!',
+        ]" [smartBackspace]="true" [autoInsertCss]="true" [contentType]="'html'" [backSpeed]="50" [typeSpeed]="50" [loop]="true">
+          <p id="typed" class="typing"></p>
+        </ngx-typed-js>
+      </div>
+
+      <div class="main-content-name" data-aos="fade" data-aos-duration="300">
+        <h1>BARTOSZ<br>BŁACHUT</h1>
+      </div>
+
+    </div>
+
+    <!-- main picture -->
+    <div class="main-content-photo" id="main-content-photo" data-aos="fade" data-aos-delay="300">
+      <iframe (load)="reshapePicture()" id="face-anim-frame" src="../../assets/face-anim.html" scrolling="no"></iframe>
+    </div>
+    <div class="main-content-learn-more">
+      <a [routerLink]="'/portfolio'" class="button hvr-wobble-horizontal" style="text-decoration: none"><p><span id="hidden"> Learn more about me! &nbsp; </span><i class="far fa-hand-pointer" id="pointer" (mouseenter)="onLearnMore(true)" (mouseleave)="onLearnMore(false)"></i></p></a>
+    </div>
+</div>
+<!-- </div> -->
+

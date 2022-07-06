@@ -1,0 +1,137 @@
+/* --- additional styles & widgets --- */
+.ball {
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+.main-container {
+  align-content: center;
+  min-height: 100vh;
+}
+
+.main-content {
+  grid-column: 1 / -1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  margin: 0 var(--margin-size) 0;
+}
+
+.main-content-photo {
+  /*z-index: -1;
+   flex: 1 1 auto; */
+  width: 100%;
+  grid-column: 7 / -1;
+}
+
+.main-content-photo iframe {
+  border: 0;
+  height: 60vh;
+  width: 100%;
+
+  transition: 0.5s;
+  overflow-x: visible;
+}
+
+.main-content-whoami {
+  width: 100%;
+  /* flex: 1 50% auto;
+   align-self: center; */
+  justify-self: end;
+  grid-column: 1 / 7;
+
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  transition: 0.5s;
+}
+
+.main-content-text {
+  margin: 5vh 0 0 0;
+}
+
+.main-content-name {
+  text-align: right;
+
+  z-index: 6;
+}
+
+.main-content-name h1 {
+  font-family: var(--normal-font-family), sans-serif;
+  color: var(--primary);
+}
+
+.main-content-typed-js {
+
+}
+
+.main-content-learn-more {
+  grid-column: 1 / -1;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-content-learn-more p {
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.main-content-learn-more span#hidden {
+  visibility: hidden;
+  display: none;
+}
+
+@media screen and (min-width: 37.5em) {
+  .main-container p,
+  .main-content-learn-more p {
+    font-size: 2rem
+  }
+
+  .main-content-name h1 {
+    font-size: var(--margin-size);
+  }
+}
+
+@media screen and (max-width: 37.5em) {
+  .main-container p,
+  .main-content-learn-more p {
+    font-size: 1.2rem;
+  }
+
+  .main-content-name h1 {
+    font-size: 2rem;
+  }
+
+  .main-content-whoami {
+    grid-column: 1 / 4;
+  }
+
+  .main-content-name {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .main-content-photo {
+    grid-column: -2;
+    z-index: 4;
+
+    margin: 10vh 0 0 -20vw;
+  }
+
+  .main-content-photo iframe {
+    width: 1000%;
+  }
+}

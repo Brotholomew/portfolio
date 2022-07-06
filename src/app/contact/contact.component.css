@@ -1,0 +1,85 @@
+body {
+  overflow-x: hidden !important;
+}
+
+.main-container {
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 0;
+}
+
+.wrapper#place {
+  grid-column: 1 / 5;
+}
+
+.wrapper#phone {
+  grid-column: 5 / 9;
+}
+
+.wrapper#mail {
+  grid-column: 9 / 13;
+}
+
+.title {
+
+}
+
+.title h3 {
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.title h1 {
+ font-family: RobotoRegular, sans-serif;
+  letter-spacing: normal;
+}
+
+.title h1,
+.title h3 {
+  word-break: break-all;
+}
+
+.line {
+  width: 32px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+@media screen and (max-width: 37.5em) {
+  .wrapper {
+    grid-column: 1 / -1 !important;
+    flex-direction: column;
+    padding: var(--margin-size) var(--margin-size) 0;
+    align-items: flex-start;
+    justify-content: center;
+  }
+}
+
+
+.ball {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 1;
+  transition: all 0.5s;
+}
+
+.ball a {
+  color: inherit;
+}
+
+.ball a i {
+  color: inherit;
+}
+
+.ball:hover {
+  font-size: 1.2em !important;
+}

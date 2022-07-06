@@ -1,0 +1,132 @@
+.nav-bar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+
+  padding: calc(2 * var(--universal-padding)) var(--universal-padding) calc(2 * var(--universal-padding));
+
+  position: fixed;
+  width: calc(100% - 2 * var(--universal-padding));
+  z-index: 6;
+}
+
+.nav-bar-container-background {
+  background-color: var(--background);
+  opacity: 0;
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  z-index: 6;
+}
+
+.close-btn,
+.menu-btn,
+.sidenav {
+  display: none;
+}
+
+.nav-bar-container a {
+  margin: 0 var(--universal-padding) 0;
+  text-decoration: none;
+
+  transition: all 0.5s;
+  z-index: 7;
+}
+
+.nav-bar-container a:visited {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.nav-bar-container a:hover {
+  color: var(--primary-variant-1);
+}
+
+/* mobile version of the menu */
+
+@media screen and (max-width: 37.5em) {
+  .close-btn,
+  .menu-btn {
+    display: block;
+  }
+
+  .home-btn,
+  .portfolio-btn,
+  .contact-btn {
+    display: none;
+  }
+
+  .sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: black; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 9;
+  }
+
+  .sidenav a {
+    align-self: center;
+    text-decoration: none;
+    color: var(--primary);
+    padding: var(--universal-padding);
+  }
+
+  .nav-bar-container {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+}
+
+/* -------------------------------- */
+
+/* strikethrough animations */
+
+span {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+span:before, span:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  top: 50%;
+  margin-top: -0.5px;
+  background: #fff;
+}
+
+span:before {
+  left: -2.5px;
+}
+span:after {
+  right: 2.5px;
+  background: #fff;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:before {
+  background: #fff;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+span:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
+/* --------------------------------- */

@@ -1,0 +1,20 @@
+<div class="nav-bar-container" id="nav-bar-container">
+  <div class="nav-bar-container-background" style="opacity: {{this.getNavBarOpacity()}}"></div>
+  <a class="close-btn" id="close-btn"
+     style="display: {{(this.expanded === true && this.device.isMobile() === true) ? 'block' : 'none'}}"
+     (click)="menuExpand(false)"
+  >close</a>
+  <a class="menu-btn" id="menu-btn"
+     style="display: {{this.expanded === false && this.device.isMobile() === true ? 'block' : 'none'}}"
+     (click)="menuExpand(true)"
+  >menu</a>
+  <a [routerLink]="'home'" class="home-btn"><span>home</span></a>
+  <a [routerLink]="'portfolio'" class="portfolio-btn"><span>portfolio</span></a>
+  <a [routerLink]="'contact'" class="contact-btn"><span>contact</span></a>
+</div>
+
+<div class="sidenav" id="sidenav">
+  <a [routerLink]="'home'" class="home-btn" style="display: block" (click)="menuExpand(false)"><span>home</span></a>
+  <a [routerLink]="'portfolio'" class="portfolio-btn" style="display: block" (click)="menuExpand(false)"><span>portfolio</span></a>
+  <a [routerLink]="'contact'" class="contact-btn" style="display: block" (click)="menuExpand(false)"><span>contact</span></a>
+</div>

@@ -1,0 +1,21 @@
+<style>
+  .face-anim {
+    filter: invert(59%) sepia(50%) saturate(555%) hue-rotate(196deg) brightness(83%) contrast(89%);
+    transition: 0.5s;
+    height: 100vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  @media screen and (max-width: 37.5em) {
+    .face-anim {
+      top: 0;
+      bottom: unset;
+    }
+  }
+</style>
+
+<body style="margin: 0; padding: 0">
+  <img id="face-anim" src="face-anim.gif"  class="face-anim" />
+</body>
